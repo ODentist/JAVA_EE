@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class UserDaoTest {
+public class mybatisTest {
     @Test
     public void test(){
 

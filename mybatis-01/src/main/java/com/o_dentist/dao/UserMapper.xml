@@ -5,8 +5,19 @@
 
 <!--namespace=绑定一个指定的Dao/Mapper接口-->
 <mapper namespace="com.o_dentist.dao.UserDao">
-    <insert id="addUser">insert into USER(id,name,pwd)values (#{id},#{name},#{pwd})</insert>
+    <insert id="addUser" parameterType="com.o_dentist.pojo.User">
+        insert into USER(id, name, pwd)
+        values (#{id}, #{name}, #{pwd})
+    </insert>
+    <update id="updateUser" parameterType="com.o_dentist.pojo.User">
+        update USER set pwd=#{pwd} where name=#{name}
+    </update>
+    <delete id="deleteUser" parameterType="java.lang.String">
+        delete USER where name=#{name}
+    </delete>
+
     <select id="getUserList" resultType="com.o_dentist.pojo.User">
-        select * from USER
+        select *
+        from USER
     </select>
 </mapper>

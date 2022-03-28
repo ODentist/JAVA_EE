@@ -5,8 +5,13 @@
 
 <!--namespace=绑定一个指定的Dao/Mapper接口-->
 <mapper namespace="com.o_dentist.dao.UserDao">
-    <insert id="addUser">insert into USER(id,name,pwd)values (#{id},#{name},#{pwd})</insert>
+    <insert id="addUser" parameterType="com.o_dentist.pojo.User">
+        insert into USER(id, name, pwd)
+        values (#{id}, #{name}, #{pwd})
+    </insert>
+
     <select id="getUserList" resultType="com.o_dentist.pojo.User">
-        select * from USER
+        select *
+        from USER
     </select>
 </mapper>

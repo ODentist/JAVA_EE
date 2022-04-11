@@ -9,6 +9,12 @@
         insert into USER(id, name, pwd)
         values (#{id}, #{name}, #{pwd})
     </insert>
+    <update id="updateUser" parameterType="com.o_dentist.pojo.User">
+        update USER set pwd=#{pwd} where name=#{name}
+    </update>
+    <delete id="deleteUser" parameterType="java.lang.String">
+        delete USER where name=#{name}
+    </delete>
 
     <select id="getUserList" resultType="com.o_dentist.pojo.User">
         select *

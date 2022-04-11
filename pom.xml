@@ -8,6 +8,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mybatis-01</module>
+        <module>Spring_test</module>
     </modules>
     <name>demo2</name>
     <packaging>pom</packaging>

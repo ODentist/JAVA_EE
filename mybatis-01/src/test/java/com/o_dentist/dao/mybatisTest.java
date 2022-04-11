@@ -38,6 +38,33 @@ public class mybatisTest {
 //        }
         sqlSession.close();
     }
+
+
+    @Test
+    public void delete(){
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        try {
+            mapper.deleteUser("赵四");
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        sqlSession.close();
+    }
+    @Test
+    public void update(){
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        try {
+            User user = new User(4, "赵四", "1230666");
+            mapper.updateUser(user);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        sqlSession.close();
+    }
 }
 
 
